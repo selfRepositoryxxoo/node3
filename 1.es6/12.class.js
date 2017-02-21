@@ -51,7 +51,7 @@ console.log(person1.hobby);
 
 class Teacher extends Person{
     constructor(name){
-        super(name);
+        super(name);//他妹的 super是接受继承类的属性  假如单独写一个类的话就不需要加 spuer 看上面就知道了
         this.age = 9;
     }
 }
