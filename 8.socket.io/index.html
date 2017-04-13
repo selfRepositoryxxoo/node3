@@ -24,6 +24,7 @@
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script>
+    // 不能直接打开需要
     // http://localhost:9090/
     // ws://localhost:9090/ = /
     window.onload = function(){
@@ -60,9 +61,9 @@
                 document.querySelector('#msg').value = '';
             }
         }
-
+        // 一个用户进入不同的房间 就通 离开房间就不在显示 ok
         window.join = function(roomName){
-            // 发射join指令，
+            // 发射join指令， 会直接到其他的房间
             socket.emit('join',roomName);
         }
     }

@@ -21,9 +21,10 @@ io.on('connection',function(socket){
     //当客户端连接的时候，向此客户端发送全量消息
    socket.emit('messages',messages);
    socket.on('message',function(message){
+       console.log('前段发过来的message',message)
        messages.push(message);
        if(currentRoom){
-           //通知所有的人
+           //通知所有的人  通知所有在这个房间的人
            io.in(currentRoom).emit('message',message);
        }else{
            //通知所有的人
@@ -32,9 +33,12 @@ io.on('connection',function(socket){
 
    });
    socket.on('join',function(roomName){
+       console.log('roomName',roomName);
+       console.log('currentRoom',currentRoom)
        if(currentRoom){
            socket.leave(currentRoom);
        }
+       // 有人进来了占领这个房间
        socket.join(roomName);
        currentRoom = roomName;
    });
@@ -43,4 +47,6 @@ io.on('connection',function(socket){
    })
 
 });
-server.listen(9090);
+server.listen(9090,function () {
+    console.log('xxxxxxxxx')
+});
