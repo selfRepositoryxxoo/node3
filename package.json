@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/selfRepositoryxxoo/node3#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
     "socket.io": "^1.7.3"
   }

@@ -11,7 +11,7 @@ var l = console.log;
         }
    }
 }*/
-//function* 生成器函数
+//function*  遍历器 生成器函数  执行就生成已
 function* buy(books){
   l('start1');
   var one = yield 'node';//产生node
